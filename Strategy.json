@@ -1,0 +1,30 @@
+{
+    "symbol":{
+      "name": "HDFCBANK",
+      "startdate": "01-01-2020",
+      "enddate": "01-01-2024",
+      "timeframe": "1d"
+    },
+    "indicators": {
+      "RelativeStrengthIndex": {"period": 14},
+      "MACDHisto": {"period_me1": 12, "period_me2": 26, "period_signal": 9, "plot": false},
+      "SimpleMovingAverage": {"period": 50}
+    },
+    "signals": [
+      {"type": "buy", "condition": "self.data.close[0] > self.SimpleMovingAverage[0]"},
+      {"type": "sell", "condition": "self.data.close[0] < self.SimpleMovingAverage[0]"}
+    ],
+    "broker_params": {
+      "cash": 100000,
+      "commission": 0.001
+    },
+    "orders" :[
+      {
+        "date" : "2022-6-22",
+        "type" : "sell",
+        "price" : "493.79",
+        "value" : "-493.79",
+        "commission" : 0.49379
+      }
+    ]
+  }
